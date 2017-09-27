@@ -17,6 +17,10 @@ void main() {
 		new Soup("CreamChesse"),
 		new Pasta("Bolognese")
 	};
+
+
+
+
 	for (auto dish : dishes) {
 		cout << dish->getName() << endl;
 	}
