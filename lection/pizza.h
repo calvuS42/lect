@@ -8,6 +8,6 @@ using namespace std;
 class Pizza : public Dish {
 public:
 	Pizza(string name);
-	string getName();
+	string getName() override;
 
 };

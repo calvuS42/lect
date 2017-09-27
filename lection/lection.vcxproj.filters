@@ -33,6 +33,9 @@
     <ClCompile Include="Dish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="order.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pizza.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

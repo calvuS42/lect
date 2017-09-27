@@ -8,6 +8,6 @@ class Soup : public Dish
 {
 public:
 	Soup(string name);
-	string getName();
+	string getName() override;
 };
 
