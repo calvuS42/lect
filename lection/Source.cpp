@@ -10,7 +10,7 @@ using namespace std;
 void main() {
 	MrCat cafe;
 	cafe.showMenu();
-	order newOrder;
+	order newOrder(3);
 	newOrder += new Pizza("Margarita");
 	newOrder += new Soup("Miso");
 

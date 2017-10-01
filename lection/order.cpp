@@ -12,6 +12,12 @@ void order::operator +=(Dish * item)
 	addItem(item);
 }
 
-order::order()
+void order::print()
 {
+	cout <<"order for table" <<  tableId << endl;
+}
+
+order::order(int tableId)
+{
+	this->tableId = tableId;
 }

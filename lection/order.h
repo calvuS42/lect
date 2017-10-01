@@ -13,6 +13,7 @@ public:
 	int tableId;
 	void addItem(Dish *item);
 	void operator +=(Dish *item);
-	order();
+	void print();
+	order(int tableId);
 };
 
