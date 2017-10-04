@@ -4,10 +4,24 @@
 #include "Pasta.h"
 #include "Soup.h"
 #include "MrCat.h"
+#include <thread>
 
 using namespace std;
 
+void testThreads() {
+	while (true) {
+		cout << ".";
+		this_thread::sleep_for(3s);
+	}
+
+}
+
+
 void main() {
+	thread t(testThreads);
+	t.join();
+	return;
+
 	MrCat cafe;
 	cafe.showMenu();
 	order newOrder(3);
