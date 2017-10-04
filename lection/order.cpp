@@ -21,3 +21,11 @@ order::order(int tableId)
 {
 	this->tableId = tableId;
 }
+
+ostream & operator<<(ostream & stream, order order)
+{
+	stream << "Order for table " << order.tableId << endl;
+	for (auto dish : order.dishes)
+		stream << "\t" << dish->getName() << "\n";
+	return stream;
+}
