@@ -13,9 +13,9 @@ vector <int> items = { 1, 2, 3, 4, 5 };
 
 void addThreads() {
 	int i = 0;
-	while (i<500) {
+	while (i<50000000) {
 		items.push_back(i*i);
-		this_thread::sleep_for(0.000001s);
+		//this_thread::sleep_for(0.000001s);
 		i++;
 	}
 
@@ -24,9 +24,10 @@ void addThreads() {
 
 void removeThreads() {
 	int i = 0;
-	while (i<500) {
-		items.pop_back();
-		this_thread::sleep_for(0.000001s);
+	while (i<50000000) {
+		if(items.size())
+			items.pop_back();
+		//this_thread::sleep_for(0.000001s);
 		i++;
 	}
 
