@@ -5,38 +5,49 @@
 #include "Soup.h"
 #include "MrCat.h"
 #include <thread>
+#include <vector>
 
 using namespace std;
 
-void testThreads() {
-	while (true) {
-		cout << ".";
-		this_thread::sleep_for(3s);
+vector <int> items = { 1, 2, 3, 4, 5 };
+
+void addThreads() {
+	int i = 0;
+	while (i<500) {
+		items.push_back(i*i);
+		this_thread::sleep_for(0.000001s);
+		i++;
 	}
 
 }
 
 
-void main() {
-	thread t1(testThreads);
-	thread t2(testThreads);
-	thread t3(testThreads);
-	thread t4(testThreads);
-	while (true) {
-		int i = 5;
-		int a = 4.;
-		while (i < 2000000000) {
-			i = a*869;
-			a += 1;
-		}
-		cout << "*";
-		this_thread::sleep_for(3s);
+void removeThreads() {
+	int i = 0;
+	while (i<500) {
+		items.pop_back();
+		this_thread::sleep_for(0.000001s);
+		i++;
 	}
-	
-	t1.join();
-	t2.join();
-	t3.join();
-	t4.join();
+
+}
+
+
+
+void main() {
+	thread workers[] = { thread(addThreads), thread(removeThreads) };
+
+
+	int k = 0;
+	while (k < 500) {
+		cout << items.size() << endl;
+		this_thread::sleep_for(0.15s);
+		k++;
+	}
+	for (int j =0; j<2; j++)
+		workers[j].join();
+	cout << "All threads finished! \n";
+	system("pause");
 	return;
 
 	MrCat cafe;
