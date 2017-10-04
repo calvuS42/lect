@@ -18,8 +18,25 @@ void testThreads() {
 
 
 void main() {
-	thread t(testThreads);
-	t.join();
+	thread t1(testThreads);
+	thread t2(testThreads);
+	thread t3(testThreads);
+	thread t4(testThreads);
+	while (true) {
+		int i = 5;
+		int a = 4.;
+		while (i < 2000000000) {
+			i = a*869;
+			a += 1;
+		}
+		cout << "*";
+		this_thread::sleep_for(3s);
+	}
+	
+	t1.join();
+	t2.join();
+	t3.join();
+	t4.join();
 	return;
 
 	MrCat cafe;
